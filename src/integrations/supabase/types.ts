@@ -52,7 +52,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_lookup_count_by_url: {
+        Args: { url_param: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
