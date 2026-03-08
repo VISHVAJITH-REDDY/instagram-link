@@ -44,7 +44,7 @@ const LinkLookup = () => {
       if (data) {
         setResult(data);
         // Increment lookup count (fire and forget)
-        supabase.rpc("increment_lookup_count" as never, { url: normalized } as never).then();
+        supabase.rpc("increment_lookup_count_by_url", { url_param: normalized }).then();
       } else {
         setNotFound(true);
       }
