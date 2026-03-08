@@ -14,7 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      post_links: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          influencer_name: string | null
+          lookup_count: number
+          post_url: string
+          product_link: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          influencer_name?: string | null
+          lookup_count?: number
+          post_url: string
+          product_link: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          influencer_name?: string | null
+          lookup_count?: number
+          post_url?: string
+          product_link?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
