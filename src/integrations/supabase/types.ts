@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      pending_requests: {
+        Row: {
+          created_at: string | null
+          creator_username: string | null
+          id: string
+          post_url: string
+          requester_instagram_username: string
+          status: string
+        }
+        Insert: {
+          created_at?: string | null
+          creator_username?: string | null
+          id?: string
+          post_url: string
+          requester_instagram_username: string
+          status?: string
+        }
+        Update: {
+          created_at?: string | null
+          creator_username?: string | null
+          id?: string
+          post_url?: string
+          requester_instagram_username?: string
+          status?: string
+        }
+        Relationships: []
+      }
       post_links: {
         Row: {
           created_at: string
@@ -52,6 +79,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      fulfill_pending_requests: {
+        Args: { url_param: string }
+        Returns: undefined
+      }
       increment_lookup_count_by_url: {
         Args: { url_param: string }
         Returns: undefined
