@@ -74,6 +74,33 @@ export type Database = {
         }
         Relationships: []
       }
+      web_requests: {
+        Row: {
+          created_at: string | null
+          id: string
+          post_url: string
+          requester_ip: string | null
+          status: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          post_url: string
+          requester_ip?: string | null
+          status?: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          post_url?: string
+          requester_ip?: string | null
+          status?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
